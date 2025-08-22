@@ -56,3 +56,24 @@ def test_takeaway_receives_order():
     with pytest.raises(TwilioRestException) as e:
         takeaway.receive_order(my_order, +15005550003)
     assert "Unable to create record" in str(e.value)
+
+# def test_receive_order_sends_text_and_clears_order():
+        
+#         mock_client = Mock()
+#         mock_client.messages.create.return_value.sid = "fake_sid"
+
+#         phone_number = "+1234567890"
+#         from_number = "+1234567899"
+
+#         myorder = Mock()
+#         takeaway = TakeAway(mock_client)
+#         sid = takeaway.receive_order(myorder, phone_number)
+
+#         mock_client.messages.create.assert_called_once()
+#         _, kwargs = mock_client.messages.create.call_args
+
+#         assert kwargs['to'] == phone_number
+#         assert kwargs['from_'] == from_number
+#         assert "Thank you! Your order was placed" in kwargs['body']
+#         myorder._clear_order.assert_called_once()
+#         assert sid == "fake_sid"

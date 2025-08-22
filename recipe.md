@@ -26,9 +26,9 @@ _Include the initializer, public properties, and public methods with all paramet
 # EXAMPLE
 
 class MyOrder:
-    def __init__(self):
+    def __init__(self, takeaway):
         # Parameters:
-        #   None
+        #   takeaway: object representing a takeaway to order from
         # Side effects:
         #   Sets the order list property of the self dictionary object
         pass # No code here yet
@@ -52,7 +52,16 @@ class MyOrder:
         #   An itemised list of the order, and a total price
         # Side-effects
         #   None
-        pass # No code here yet    
+        pass # No code here yet 
+
+    def _clear_order(self):
+        # Parameters:
+        #   None
+        # Returns:
+        #   None
+        # Side-effects
+        #   Clears all items from order_list
+        pass # No code here yet 
 
 
 
@@ -64,7 +73,8 @@ class TakeAway:
         # Parameters:
         #   takeaway_name: string representing takeaway name
         # Side effects:
-        #   Sets the dishes property of the self dictionary object and name
+        #   Sets the dishes property of the self dictionary object and #   name. Also sets twilio permissions up, account sid, auth
+        #   token, client.
         pass # No code here yet
 
     def add_dish(self, dish):
@@ -73,7 +83,7 @@ class TakeAway:
         # Returns:
         #   Nothing
         # Side-effects
-        #   Saves the dish to the self object
+        #   Saves the dish to the self object if enough of the dish is #   available.
         pass # No code here yet
     
     def show_menu(self):
